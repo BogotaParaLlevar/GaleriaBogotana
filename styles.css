@@ -1,0 +1,163 @@
+/* styles.css */
+body {
+    font-family: 'Kenarose', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #3b352f;
+    color: #dec6ab;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Fondo Parallax y Decoraciones */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('fondo.jpg'); /* Cambia 'fondo.jpg' por tu propia imagen de fondo */
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+    filter: blur(10px);
+    transform: scale(1.1);
+    animation: parallax 15s infinite linear;
+}
+
+@keyframes parallax {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(10px); }
+}
+
+/* Encabezado */
+header {
+    width: 100%;
+    padding: 80px 20px 30px;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+}
+
+header h1 {
+    font-family: 'Harlysta', cursive;
+    font-size: 4em;
+    margin: 0;
+    opacity: 0;
+    transform: translateY(40px);
+    color: #e1c8aa; /* Nuevo color para el h1 */
+    animation: fadeInUp 1.5s ease forwards;
+}
+
+header h2 {
+    font-family: 'Kenarose', serif;
+    font-size: 1.8em;
+    margin-top: 15px;
+    opacity: 0;
+    transform: translateX(-30px);
+    animation: fadeInLeft 1.5s ease forwards;
+    animation-delay: 1s;
+}
+
+/* Carrusel */
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    overflow: hidden;
+    margin: 50px auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.7s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Efecto Hover en las Imágenes */
+.carousel-slide img:hover {
+    transform: scale(1.05);
+}
+
+/* Pie de página */
+footer {
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    background-color: #3b352f;
+    color: #dec6ab;
+    font-size: 1em;
+    font-family: 'Kenarose', serif;
+    position: relative;
+    z-index: 1;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeInUp 1.5s ease forwards;
+    animation-delay: 0.5s;
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Transiciones de texto */
+.animate-text {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeInUp 1.5s ease forwards;
+}
+
+.animate-text-2 {
+    opacity: 0;
+    transform: translateX(-30px);
+    animation: fadeInLeft 1.5s ease forwards;
+    animation-delay: 1s;
+}
+
+/* Línea divisoria */
+.divider {
+    width: 80%;
+    height: 2px;
+    margin: 40px 0;
+    background-color: transparent;
+    border-top: 2px dotted #dec6ab; /* Líneas punteadas sutiles */
+    opacity: 0.4;
+}
