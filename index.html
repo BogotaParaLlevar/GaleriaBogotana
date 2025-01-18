@@ -51,5 +51,41 @@
         <p class="animate-text">&copy; 2024 Galería Bogotana por Alejandra Melo</p>
     </footer>
     <script src="script.js"></script>
+     <header>
+        <h1>Galería de Fotografías</h1>
+    </header>
+
+    <section class="gallery">
+        <img src="https://via.placeholder.com/300" alt="Foto 1">
+        <img src="https://via.placeholder.com/300" alt="Foto 2">
+        <img src="https://via.placeholder.com/300" alt="Foto 3">
+        <img src="https://via.placeholder.com/300" alt="Foto 4">
+    </section>
+
+    <section class="feedback">
+        <h2>Deja tu retroalimentación</h2>
+        <textarea id="feedback-input" placeholder="Escribe tu comentario aquí..."></textarea>
+        <button id="submit-feedback">Enviar</button>
+
+        <ul class="feedback-list" id="feedback-list">
+            <!-- Los comentarios aparecerán aquí -->
+        </ul>
+    </section>
+
+    <script>
+        document.getElementById('submit-feedback').addEventListener('click', function() {
+            const feedbackInput = document.getElementById('feedback-input');
+            const feedbackList = document.getElementById('feedback-list');
+
+            if (feedbackInput.value.trim() !== '') {
+                const newFeedback = document.createElement('li');
+                newFeedback.textContent = feedbackInput.value;
+                feedbackList.appendChild(newFeedback);
+                feedbackInput.value = ''; // Limpia el campo de texto
+            } else {
+                alert('Por favor, escribe un comentario antes de enviarlo.');
+            }
+        });
+    </script>
 </body>
 </html>
