@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     prevButton.addEventListener('click', () => {
         if (currentIndex > 0) {
             currentIndex--;
-            updateCarousel();
+            updateCarousel(1);
         }
     });
 
