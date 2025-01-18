@@ -4,17 +4,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galería Bogotana</title>
-     <link href="https://fonts.googleapis.com/css2?family=Harlysta&family=Kenarose:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Harlysta&family=Kenarose:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+
+        main {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 20px;
+        }
+
+        .carousel {
+            flex: 3;
+        }
+
+        .feedback {
+            flex: 1;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .feedback h2 {
+            text-align: center;
+        }
+
+        .feedback textarea {
+            width: 100%;
+            height: 100px;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .feedback button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .feedback button:hover {
+            background-color: #555;
+        }
+
+        .feedback-list {
+            margin-top: 20px;
+            padding: 0;
+            list-style: none;
+        }
+
+        .feedback-list li {
+            background: #f9f9f9;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            border-radius: 4px;
+        }
+    </style>
 </head>
 <body>
     <header>
-         <h1 class="animate-text">Galería Bogotana</h1>
+        <h1 class="animate-text">Galería Bogotana</h1>
         <h2 class="animate-text-2">Bogotá para Llevar</h2>
         <h3 class="animate-text-2">El alma de Bogotá reflejada en las fotografías de Alejandra Melo</h3>
-
     </header>
-<!-- Línea divisoria entre el título y el carrusel -->
+    <!-- Línea divisoria entre el título y el carrusel -->
     <div class="divider"></div>
     <main>
         <section class="carousel">
@@ -42,27 +112,24 @@
                 <div class="carousel-slide"><img src="Bog21ASMV.jpg" alt="Foto de las luces navideñas en Monserrate Bogotá Colombia"></div>
                 <div class="carousel-slide"><img src="Bog22ASMV.jpg" alt="Foto de luces navideñas Monserrate Bogotá Colombia"></div>
                 <div class="carousel-slide"><img src="Bog13ASMV.jpg" alt="Foto de la entrada peatonal en Monserrate Bogotá Colombia"></div>
-
             </div>
         </section>
+
+        <section class="feedback">
+            <h2>¿Qué tal ha sido tu experiencia con Bogotá para Llevar?</h2>
+            <textarea id="feedback-input" placeholder="Escribe tu comentario aquí..."></textarea>
+            <button id="submit-feedback">Enviar</button>
+
+            <ul class="feedback-list" id="feedback-list">
+                <!-- Los comentarios aparecerán aquí -->
+            </ul>
+        </section>
     </main>
-<!-- Línea divisoria entre el carrusel y el pie de página -->
+    <!-- Línea divisoria entre el carrusel y el pie de página -->
     <div class="divider"></div>
     <footer>
         <p class="animate-text">&copy; 2024 Galería Bogotana por Alejandra Melo</p>
     </footer>
-    <script src="script.js"></script>
-     
-    <section class="feedback">
-        <h2>¿Qué tal ha sido tu experiencia con Bogotá para Llevar?</h2>
-        <textarea id="feedback-input" placeholder="Escribe tu comentario aquí..."></textarea>
-        <button id="submit-feedback">Enviar</button>
-
-        <ul class="feedback-list" id="feedback-list">
-            <!-- Los comentarios aparecerán aquí -->
-        </ul>
-    </section>
-
     <script>
         document.getElementById('submit-feedback').addEventListener('click', function() {
             const feedbackInput = document.getElementById('feedback-input');
