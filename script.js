@@ -22,11 +22,13 @@ document.addEventListener('DOMContentLoaded', () => {
     prevButton.addEventListener('click', () => {
         if (currentIndex > 0) {
             currentIndex--;
-            updateCarousel(1);
+            updateCarousel();
         }
     });
 
     // Ajustar el tamaño del carrusel al cambiar el tamaño de la ventana
     window.addEventListener('resize', updateCarousel);
+
+ updateCarousel();
 });
 
