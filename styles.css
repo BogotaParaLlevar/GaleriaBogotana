@@ -194,3 +194,73 @@ header h2 {
 .carousel-button.next {
     right: 10px;
 }
+.carousel-feedback-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 80%; /* Ajusta el tamaño según tus necesidades */
+    margin: 20px auto;
+    align-items: flex-start;
+}
+
+/* Estilos del Carrusel */
+.carousel {
+    position: relative;
+    width: 70%; /* El carrusel ocupa el 70% del espacio */
+    max-width: 900px;
+    overflow: hidden;
+    margin: 50px 0;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Estilos del Feedback */
+.feedback {
+    width: 25%; /* El feedback ocupa el 25% del espacio */
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px; /* Espacio entre el carrusel y el feedback */
+}
+
+.feedback h2 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.feedback textarea {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #fff;
+    color: #333;
+}
+
+.feedback button {
+    padding: 10px 15px;
+    border: none;
+    background-color: #dec6ab;
+    color: #3b352f;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.feedback-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.feedback-list li {
+    margin-bottom: 10px;
+    background-color: #444;
+    padding: 10px;
+    border-radius: 5px;
+}
