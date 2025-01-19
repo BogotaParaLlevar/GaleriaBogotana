@@ -1,10 +1,6 @@
-// script.js
 document.addEventListener('DOMContentLoaded', () => {
     const track = document.querySelector('.carousel-track');
     const slides = Array.from(track.children);
-    const prevButton = document.querySelector('.carousel-button.prev');
-    const nextButton = document.querySelector('.carousel-button.next');
-
     let currentIndex = 0;
 
     const updateCarousel = () => {
@@ -12,23 +8,15 @@ document.addEventListener('DOMContentLoaded', () => {
         track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
     };
 
-    nextButton.addEventListener('click', () => {
+    const moveToNextSlide = () => {
         if (currentIndex < slides.length - 1) {
             currentIndex++;
-            updateCarousel();
+        } else {
+            currentIndex = 0;
         }
-    });
+        updateCarousel();
+    };
 
-    prevButton.addEventListener('click', () => {
-        if (currentIndex > 0) {
-            currentIndex--;
-            updateCarousel();
-        }
-    });
-
-    // Ajustar el tamaño del carrusel al cambiar el tamaño de la ventana
-    window.addEventListener('resize', updateCarousel);
-
- updateCarousel();
+    // Set automatic slide transition every 6 seconds
+    setInterval(moveToNextSlide, 6000);
 });
-
