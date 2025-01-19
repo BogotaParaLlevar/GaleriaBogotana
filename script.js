@@ -18,5 +18,5 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // Set automatic slide transition every 6 seconds
-    setInterval(moveToNextSlide, 6000);
+    setInterval(moveToNextSlide, 4000);
 });
