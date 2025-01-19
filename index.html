@@ -25,6 +25,23 @@
 
         .carousel {
             flex: 3;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            display: block;
         }
 
         .feedback {
@@ -88,34 +105,14 @@
     <div class="divider"></div>
     <main>
         <section class="carousel">
-    <button class="carousel-button prev">◀</button>
-    <div class="carousel-track">
+            <div class="carousel-track">
                 <div class="carousel-slide"><img src="/assets/images/Bog01ASMV.webp" alt="Foto de Cotudos en Monserrate Bogotá Colombia"></div>
                 <div class="carousel-slide"><img src="/assets/images/Bog02ASMV.webp" alt="Foto del Mercado de las pulgas Parque de los periodistas Bogotá Colombia"></div>
                 <div class="carousel-slide"><img src="/assets/images/Bog03ASMV.webp" alt="Foto de una venta de libros Bogotá Colombia"></div>
                 <div class="carousel-slide"><img src="/assets/images/Bog04ASMV.webp" alt="Foto del septimazo Bogotá Colombia"></div>
                 <div class="carousel-slide"><img src="/assets/images/Bog05ASMV.webp" alt="Foto en el museo nacional Bogotá Colombia"></div>
-                <div class="carousel-slide"><img src="/assets/images/Bog06ASMV.webp" alt="Foto de un chocolate en la Puerta Falsa Bogotá Colombia"></div>
-                <div class="carousel-slide"><img src="/assets/images/Bog07ASMV.webp" alt="Foto en el la biblioteca Luis Angel Arango Bogotá Colombia"></div>
-                <div class="carousel-slide"><img src="/assets/images/Bog08ASMV.webp" alt="Foto de botes en el Parque de los Novios Bogotá Colombia"></div>
-                <div class="carousel-slide"><img src="/assets/images/Bog09ASMV.webp" alt="Foto en el Parque de los Novios Bogotá Colombia"></div>
-                <div class="carousel-slide"><img src="/assets/images/Bog10ASMV.webp" alt="Foto de Beisbol en el IDRD Bogotá Colombia"></div>
-                <div class="carousel-slide"><img src="/assets/images/Bog11ASMV.webp" alt="Foto de Atletismo en el IDRD Bogotá Colombia"></div>
-                <div class="carousel-slide"><img src="/assets/images/Bog12ASMV.webp" alt="Foto encendiendo faroles el siete de diciembre Bogotá Colombia"></div>
-                <div class="carousel-slide"><img src="/assets/images/Bog13ASMV.webp" alt="Foto del día de velitas siete de diciembre Bogotá Colombia"></div>
-                <div class="carousel-slide"><img src="/assets/images/Bog14ASMV.webp" alt="Foto de Iglesia en Monserrate Bogotá Colombia"></div>
-                <div class="carousel-slide"><img src="/assets/images/Bog15ASMV.webp" alt="Foto de un canelazo en Monserrate Bogotá Colombia"></div>
-                <div class="carousel-slide"><img src="/assets/images/Bog16ASMV.webp" alt="Foto de platos típicos en Monserrate Bogotá Colombia"></div>
-                <div class="carousel-slide"><img src="/assets/images/Bog17ASMV.webp" alt="Foto de aguapanela y arepa en Monserrate Bogotá Colombia"></div>
-                <div class="carousel-slide"><img src="/assets/images/Bog18ASMV.webp" alt="Foto del comercio en Monserrate Bogotá Colombia"></div>
-                <div class="carousel-slide"><img src="/assets/images/Bog19ASMV.webp" alt="Foto del paisaje en Monserrate Bogotá Colombia"></div>
-                <div class="carousel-slide"><img src="/assets/images/Bog20ASMV.webp" alt="Foto del pesebre en la iglesia de Monserrate Bogotá Colombia"></div>
-                <div class="carousel-slide"><img src="/assets/images/Bog21ASMV.webp" alt="Foto de las luces navideñas en Monserrate Bogotá Colombia"></div>
-                <div class="carousel-slide"><img src="/assets/images/Bog22ASMV.webp" alt="Foto de luces navideñas Monserrate Bogotá Colombia"></div>
-                <div class="carousel-slide"><img src="/assets/images/Bog13ASMV.webp" alt="Foto de la entrada peatonal en Monserrate Bogotá Colombia"></div>
             </div>
-    <button class="carousel-button next">▶</button>
-</section>
+        </section>
         <section class="feedback">
             <h2>¿Qué tal ha sido tu experiencia con Bogotá para Llevar?</h2>
             <textarea id="feedback-input" placeholder="Escribe tu comentario aquí..."></textarea>
@@ -132,6 +129,25 @@
         <p class="animate-text">&copy; 2024 Galería Bogotana por Alejandra Melo</p>
     </footer>
     <script>
+        // Configuración del carrusel automático
+        const track = document.querySelector('.carousel-track');
+        const slides = Array.from(track.children);
+        let currentIndex = 0;
+
+        function moveToSlide(index) {
+            const slideWidth = slides[0].getBoundingClientRect().width;
+            track.style.transform = `translateX(-${index * slideWidth}px)`;
+        }
+
+        function autoPlay() {
+            currentIndex = (currentIndex + 1) % slides.length;
+            moveToSlide(currentIndex);
+        }
+
+        // Inicia el carrusel automático cada 10 segundos
+        setInterval(autoPlay, 3000);
+
+        // Enviar comentarios
         document.getElementById('submit-feedback').addEventListener('click', function() {
             const feedbackInput = document.getElementById('feedback-input');
             const feedbackList = document.getElementById('feedback-list');
