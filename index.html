@@ -17,6 +17,8 @@
 <!-- Línea divisoria entre el título y el carrusel -->
     <div class="divider"></div>
     <main>
+  <div class="content-wrapper">
+        <!-- Carrusel -->
         <section class="carousel">
             <div class="carousel-track">
                 <div class="carousel-slide"><img src="Bog01ASMV.jpg" alt="Foto de Cotudos en Monserrate Bogotá Colombia"></div>
@@ -63,20 +65,14 @@
         </ul>
     </section>
 
-    <script>
-        document.getElementById('submit-feedback').addEventListener('click', function() {
-            const feedbackInput = document.getElementById('feedback-input');
-            const feedbackList = document.getElementById('feedback-list');
+ <section class="feedback">
+            <h2>¿Qué tal ha sido tu experiencia con Bogotá para Llevar?</h2>
+            <textarea id="feedback-input" placeholder="Escribe tu comentario aquí..."></textarea>
+            <button id="submit-feedback">Enviar</button>
 
-            if (feedbackInput.value.trim() !== '') {
-                const newFeedback = document.createElement('li');
-                newFeedback.textContent = feedbackInput.value;
-                feedbackList.appendChild(newFeedback);
-                feedbackInput.value = ''; // Limpia el campo de texto
-            } else {
-                alert('Por favor, escribe un comentario antes de enviarlo.');
-            }
-        });
-    </script>
-</body>
-</html>
+            <ul class="feedback-list" id="feedback-list">
+                <!-- Los comentarios aparecerán aquí -->
+            </ul>
+        </section>
+    </div>
+</main>
