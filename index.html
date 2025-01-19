@@ -17,10 +17,12 @@
 <!-- Línea divisoria entre el título y el carrusel -->
     <div class="divider"></div>
     <main>
-  <div class="content-wrapper">
-        <!-- Carrusel -->
-        <section class="carousel">
-            <div class="carousel-track">
+<div class="content-wrapper">
+        <!-- Carrusel y Feedback contenedor -->
+        <div class="carousel-feedback-wrapper">
+            <!-- Carrusel -->
+            <section class="carousel">
+                <div class="carousel-track">
                 <div class="carousel-slide"><img src="Bog01ASMV.jpg" alt="Foto de Cotudos en Monserrate Bogotá Colombia"></div>
                 <div class="carousel-slide"><img src="Bog02ASMV.jpg" alt="Foto del Mercado de las pulgas Parque de los periodistas Bogotá Colombia"></div>
                 <div class="carousel-slide"><img src="Bog03ASMV.jpg" alt="Foto de una venta de libros Bogotá Colombia"></div>
@@ -46,6 +48,18 @@
                 <div class="carousel-slide"><img src="Bog13ASMV.jpg" alt="Foto de la entrada peatonal en Monserrate Bogotá Colombia"></div>
 
             </div>
+<section class="feedback">
+                <h2>¿Qué tal ha sido tu experiencia con Bogotá para Llevar?</h2>
+                <textarea id="feedback-input" placeholder="Escribe tu comentario aquí..."></textarea>
+                <button id="submit-feedback">Enviar</button>
+
+                <ul class="feedback-list" id="feedback-list">
+                    <!-- Los comentarios aparecerán aquí -->
+                </ul>
+            </section>
+        </div>
+    </div>
+</main>
         </section>
     </main>
 <!-- Línea divisoria entre el carrusel y el pie de página -->
