@@ -175,22 +175,10 @@ header h2 {
     display: block;
 }
 
-.carousel-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    z-index: 1;
-}
-
-.carousel-button.prev {
-    left: 10px;
-}
-
-.carousel-button.next {
-    right: 10px;
+.carousel-alt {
+    font-family: 'Kenarose', serif; /* Usa la misma fuente del diseño */
+    font-size: 1em; /* Ajusta el tamaño del texto según sea necesario */
+    text-align: center;
+    color: #3b352f; /* Mismo color que el fondo marrón oscuro */
+    margin-top: 10px;
 }
