@@ -264,3 +264,25 @@ header h2 {
     padding: 10px;
     border-radius: 5px;
 }
+
+.carousel {
+    display: flex;
+    justify-content: center; /* Centers the entire carousel horizontally */
+    align-items: center; /* Vertically center the carousel */
+    overflow: hidden;
+    width: 100%; /* Ensure the carousel takes up the full width */
+}
+
+/* Adjust the track to hold all images */
+.carousel-track {
+    display: flex;
+    justify-content: center; /* Ensures the images are horizontally centered */
+    flex-wrap: nowrap; /* Keeps the images in a single row */
+}
+
+/* Optional: Add some styling for individual images */
+.carousel-slide img {
+    width: 100%;
+    max-width: 500px; /* Set a max-width for the images if necessary */
+    height: auto;
+}
