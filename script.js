@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const updateCarousel = () => {
         const slideWidth = slides[0].getBoundingClientRect().width;
-        track.style.transform = translateX(-${currentIndex * slideWidth}px);
+        track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
     };
 
     const moveToNextSlide = () => {
@@ -17,6 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCarousel();
     };
 
-    // Set automatic slide transition every 6 seconds
+    // Set automatic slide transition every 3 seconds
     setInterval(moveToNextSlide, 3000);
 });
