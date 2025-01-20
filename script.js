@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const updateCarousel = () => {
         const slideWidth = slides[0].getBoundingClientRect().width;
-        track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+        track.style.transform = translateX(-${currentIndex * slideWidth}px);
     };
 
     const moveToNextSlide = () => {
