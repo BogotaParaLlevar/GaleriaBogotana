@@ -1,28 +1,4 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galería Bogotana</title>
-     <link href="https://fonts.googleapis.com/css2?family=Harlysta&family=Kenarose:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-         <h1 class="animate-text">Galería Bogotana</h1>
-        <h2 class="animate-text-2">Bogotá para Llevar</h2>
-        <h3 class="animate-text-2">El alma de Bogotá reflejada en las fotografías de Alejandra Melo</h3>
-
-    </header>
-<!-- Línea divisoria entre el título y el carrusel -->
-    <div class="divider"></div>
-    <main>
-        <section class="carousel">
-            <div class="carousel-track">
-                <div class="carousel-slide"><img src="Bog01ASMV.jpg" alt="Foto de Cotudos en Monserrate Bogotá Colombia"></div>
-                <div class="carousel-slide"><img src="Bog02ASMV.jpg" alt="Foto del Mercado de las pulgas Parque de los periodistas Bogotá Colombia"></div>
-                <div class="carousel-slide"><img src="Bog03ASMV.jpg" alt="Foto de una venta de libros Bogotá Colombia"></div>
-                <div class="carousel-slide"><img src="Bog04ASMV.jpg" alt="Foto del septimazo Bogotá Colombia"></div>
+div class="carousel-slide"><img src="Bog04ASMV.jpg" alt="Foto del septimazo Bogotá Colombia"></div>
                 <div class="carousel-slide"><img src="Bog05ASMV.jpg" alt="Foto en el museo nacional Bogotá Colombia"></div>
                 <div class="carousel-slide"><img src="Bog06ASMV.jpg" alt="Foto de un chocolate en la Puerta Falsa Bogotá Colombia"></div>
                 <div class="carousel-slide"><img src="Bog07ASMV.jpg" alt="Foto en el la biblioteca Luis Angel ArangoBogotá Colombia"></div>
@@ -63,20 +39,6 @@
         </ul>
     </section>
 
-    <script>
-        document.getElementById('submit-feedback').addEventListener('click', function() {
-            const feedbackInput = document.getElementById('feedback-input');
-            const feedbackList = document.getElementById('feedback-list');
-
-            if (feedbackInput.value.trim() !== '') {
-                const newFeedback = document.createElement('li');
-                newFeedback.textContent = feedbackInput.value;
-                feedbackList.appendChild(newFeedback);
-                feedbackInput.value = ''; // Limpia el campo de texto
-            } else {
-                alert('Por favor, escribe un comentario antes de enviarlo.');
-            }
-        });
-    </script>
-</body>
-</html>
+ 
+    </div>
+</main>
