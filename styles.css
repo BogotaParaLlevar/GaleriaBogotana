@@ -185,14 +185,14 @@ footer {
 
 @font-face {
     font-family: 'Kenarose';
-    src: url('fonts/Kenarose-Regular.otf') format('truetype');
+    src: url('fonts/Kenarose.otf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Harlysta';
-    src: url('fonts/Harlysta-Regular.otf') format('truetype');
+    src: url('fonts/Harlysta.otf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
