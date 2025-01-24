@@ -1,4 +1,4 @@
-/* styles.css */
+/* General Styles */
 body {
     font-family: 'Kenarose', serif;
     margin: 0;
@@ -12,7 +12,7 @@ body {
     position: relative;
 }
 
-/* Fondo Parallax y Decoraciones */
+/* Fondo Parallax */
 body::before {
     content: '';
     position: absolute;
@@ -20,69 +20,52 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('fondo.jpg'); /* Cambia 'fondo.jpg' por tu propia imagen de fondo */
+    background-image: url('fondo.jpg'); /* Cambia 'fondo.jpg' */
     background-position: center;
     background-size: cover;
     z-index: -1;
-    filter: blur(10px);
+    filter: blur(8px);
     transform: scale(1.1);
-    animation: parallax 15s infinite linear;
-}
-
-@keyframes parallax {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(10px); }
 }
 
 /* Encabezado */
 header {
     width: 100%;
-    padding: 80px 20px 30px;
+    padding: 40px 20px 20px;
     text-align: center;
     color: #fff;
-    position: relative;
-    z-index: 1;
 }
 
 header h1 {
     font-family: 'Harlysta', cursive;
-    font-size: 4em;
+    font-size: 2.5em; /* Ajustado para móviles */
     margin: 0;
-    opacity: 0;
-    transform: translateY(40px);
-    color: #e1c8aa; /* Nuevo color para el h1 */
+    color: #e1c8aa;
     animation: fadeInUp 1.5s ease forwards;
 }
 
 header h2 {
     font-family: 'Kenarose', serif;
-    font-size: 1.8em;
-    margin-top: 15px;
-    opacity: 0;
-    transform: translateX(-30px);
+    font-size: 1.2em; /* Ajustado para móviles */
+    margin-top: 10px;
     animation: fadeInLeft 1.5s ease forwards;
     animation-delay: 1s;
+}
+
+header h3 {
+    font-size: 1em; /* Pequeño subtítulo */
+    margin-top: 10px;
 }
 
 /* Carrusel */
 .carousel {
     position: relative;
     width: 100%;
-    max-width: 900px;
+    max-width: 360px; /* Para pantallas móviles */
+    margin: 30px auto;
     overflow: hidden;
-    margin: 50px auto;
-    border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-}
-
-.carousel {
-    overflow: hidden;
-    position: relative;
-    width: 80%;
-    margin: 20px auto;
-    border: 2px solid #ccc;
     border-radius: 10px;
-    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .carousel-track {
@@ -92,7 +75,6 @@ header h2 {
 
 .carousel-slide {
     min-width: 100%;
-    transition: opacity 0.5s ease-in-out;
 }
 
 .carousel-slide img {
@@ -100,14 +82,66 @@ header h2 {
     border-radius: 10px;
 }
 
-.divider {
-    width: 80%;
-    height: 2px;
-    background-color: #ccc;
-    margin: 10px auto;
+.carousel-alt {
+    font-size: 0.9em;
+    text-align: center;
+    color: #dec6ab;
+    margin-top: 5px;
 }
 
-/* Animaciones */
+/* Divider */
+.divider {
+    width: 90%;
+    height: 1px;
+    margin: 20px 0;
+    background-color: #dec6ab;
+    opacity: 0.4;
+}
+
+/* Footer */
+footer {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+/* Feedback Section */
+.feedback {
+    width: 90%;
+    max-width: 360px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.feedback textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-family: inherit;
+    font-size: 0.9em;
+    resize: none;
+}
+
+.feedback button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #e1c8aa;
+    color: #3b352f;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1em;
+}
+
+.feedback-list {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+}
+
+/* Animations */
 @keyframes fadeInUp {
     0% {
         opacity: 0;
@@ -130,67 +164,36 @@ header h2 {
     }
 }
 
-/* Transiciones de texto */
-.animate-text {
-    opacity: 0;
-    transform: translateY(40px);
-    animation: fadeInUp 1.5s ease forwards;
+/* Responsive Design */
+@media (min-width: 768px) {
+    header h1 {
+        font-size: 3.5em;
+    }
+
+    header h2 {
+        font-size: 1.8em;
+    }
+
+    header h3 {
+        font-size: 1.2em;
+    }
+
+    .carousel {
+        max-width: 600px;
+    }
 }
 
-.animate-text-2 {
-    opacity: 0;
-    transform: translateX(-30px);
-    animation: fadeInLeft 1.5s ease forwards;
-    animation-delay: 1s;
+@font-face {
+    font-family: 'Kenarose';
+    src: url('fonts/Kenarose.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
-/* Línea divisoria */
-.divider {
-    width: 80%;
-    height: 2px;
-    margin: 40px 0;
-    background-color: transparent;
-    border-top: 2px dotted #dec6ab; /* Líneas punteadas sutiles */
-    opacity: 0.4;
-}
-.carousel {
-    position: relative;
-    overflow: hidden;
-    width: 80%;
-    margin: auto;
+@font-face {
+    font-family: 'Harlysta';
+    src: url('fonts/Harlysta.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
-.carousel-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.carousel-slide {
-    min-width: 100%;
-    box-sizing: border-box;
-}
-
-.carousel img {
-    width: 100%;
-    display: block;
-}
-
-.carousel-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    z-index: 1;
-}
-
-.carousel-button.prev {
-    left: 10px;
-}
-
-.carousel-button.next {
-    right: 10px;
-}

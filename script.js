@@ -17,6 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCarousel();
     };
 
-    // Set automatic slide transition every 6 seconds
-    setInterval(moveToNextSlide, 6000);
+    // Set automatic slide transition every 3 seconds
+    setInterval(moveToNextSlide, 3000);
 });
