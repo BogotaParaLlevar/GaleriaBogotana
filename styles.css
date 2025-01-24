@@ -185,14 +185,25 @@ footer {
 
 @font-face {
     font-family: 'Kenarose';
+<<<<<<< Updated upstream
     src: url('fonts/Kenarose.otf') format('truetype');
+=======
+    src: url('Kenarose.otf') format('truetype');
+>>>>>>> Stashed changes
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Kenarose';
+    src: url('Kenarose.otf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Harlysta';
-    src: url('fonts/Harlysta.otf') format('truetype');
+    src: url('Harlysta.otf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
